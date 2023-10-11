@@ -45,4 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_11_055251) do
   end
 
   add_foreign_key "recipes", "users"
+  add_foreign_key "recipes", "users"
 end

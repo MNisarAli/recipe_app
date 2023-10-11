@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "users#index"
-
   resources :users do
   end
 
   resources :recipes do
   end
+
+  # Defines the root path route ("/") to the public_recipes controller's index action
+  root "users#index"
+
+  get '/public_recipes', to: 'public_recipes#index'
 end
