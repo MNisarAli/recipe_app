@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   root "users#index"
 
   get '/public_recipes', to: 'public_recipes#index'
+  delete '/recipes/:id', to: 'recipes#destroy', as: 'destroy_recipe'
 end
