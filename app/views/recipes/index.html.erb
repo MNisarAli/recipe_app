@@ -1,1 +1,8 @@
 <h2>Recipe List Page</h2>
+
+<% @recipes.each do |recipe| %>
+  <p><%= link_to recipe.name, recipe_path(recipe) %></p>
+  <p>By: <%= user.name %></p>
+  <p><%= recipe.description %></p>
+<% end %>
+end
