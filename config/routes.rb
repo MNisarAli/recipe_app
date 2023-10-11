@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   end
 
   # Defines the root path route ("/") to the public_recipes controller's index action
-  root 'public_recipes#index'
+  root "users#index"
+
+  get '/public_recipes', to: 'public_recipes#index'
 end
