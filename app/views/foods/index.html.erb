@@ -1,7 +1,10 @@
 <h2>Food List Page</h2>
 <p>Add Food</p>
-<% @foods.each do |food| %>
+<% @foods.each_with_index do |food, index| %>
   <p><%= food.name %></p>
   <p><%= food.price %></p>
   <p><%= food.measurement_unit %></p>
+  <% if can? :destroy, food %>
+    <%= button_to 'Delete', destroy_food_path(food), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 <% end %>
