@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :recipes do
   end
 
+  resources :foods do
+  end
+
   # Defines the root path route ("/") to the public_recipes controller's index action
   root "users#index"
 
