@@ -1,0 +1,10 @@
+<nav>
+  <h3>Recipe App</h3>
+  <ul>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Food', foods_path %></li>
+    <li><%= link_to 'Recipe', recipes_path %></li>
+    <li><%= link_to 'Public Recipe', public_recipes_path %></li>
+    <li><%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "logout" %></li>
+  </ul>
+</nav>
