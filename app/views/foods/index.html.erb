@@ -1,1 +1,7 @@
 <h2>Food List Page</h2>
+<p>Add Food</p>
+<% @foods.each do |food| %>
+  <p><%= food.name %></p>
+  <p><%= food.price %></p>
+  <p><%= food.measurement_unit %></p>
+<% end %>
