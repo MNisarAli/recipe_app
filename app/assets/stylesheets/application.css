@@ -42,7 +42,7 @@ a {
   align-items: center;
   list-style: none;
   padding: 0;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .nav-btn {
@@ -51,6 +51,13 @@ a {
   font-size: 1.05rem;
   border: none;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.user-btn {
+  border: 2px solid;
+  border-radius: 3px;
+  padding: 3px 10px;
+  color: black;
 }
 
 .nav-btn:hover {
