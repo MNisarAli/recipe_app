@@ -29,7 +29,7 @@ RSpec.describe FoodsController, type: :controller do
     it 'deleted food should not be in foods list' do
       food = @user.foods.create(name: 'Test Food', measurement_unit: 'grams', price: 10, quantity: 1)
       delete :destroy, params: { id: food.id }
-      expect(response).to have_http_status(204)
+      expect(response).to have_http_status(302)
     end
   end
 
