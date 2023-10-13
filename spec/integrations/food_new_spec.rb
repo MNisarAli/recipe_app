@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Food List Page', type: :feature do
+RSpec.feature 'Create a new food page', type: :feature do
   before do
     @user = User.create(name: 'Test User', email: 'test@gmail.com', password: 'password', confirmed_at: Time.now)
     
