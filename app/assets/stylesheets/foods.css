@@ -25,3 +25,12 @@
 .food-table tr:nth-child(even) td {
   background-color: #feecd6;
 }
+
+.btn-back {
+  margin-left: 18.5rem;
+}
+
+.create-food-btn {
+  margin-top: 1rem;
+  margin-left: 28rem;
+}
