@@ -12,7 +12,8 @@
   width: 30%;
 }
 
-.food-table th, .food-table td {
+.food-table th,
+.food-table td {
   border: 1.5px solid #a9a9a9;
   padding: 8px;
   text-align: center;
