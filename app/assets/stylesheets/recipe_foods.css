@@ -1,0 +1,10 @@
+.add_new_ingredient {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-food-btn {
+  margin-top: 1rem;
+  margin-left: 40%;
+}

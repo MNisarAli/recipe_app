@@ -1,0 +1,10 @@
+.amount-value {
+  display: flex;
+  justify-content: space-around;
+}
+
+.shopping-table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}

@@ -1,0 +1,39 @@
+.home-container {
+  margin: 0;
+  height: 85vh;
+  background-image: url('food.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+.user-info {
+  display: flex;
+  justify-content: end;
+}
+
+.logged-user {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: fit-content;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.logged-user:first-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.welcome h1,
+.welcome h3 {
+  text-align: center;
+  color: #ed0000;
+}
+
+.welcome h1 {
+  font-size: 4em;
+}
+
+.welcome h3 {
+  font-size: 2.5em;
+}
