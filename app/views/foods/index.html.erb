@@ -1,14 +1,31 @@
-<h2>Food List Page</h2>
-<% if current_user == @user %>
-<div class="add-food">
-  <%= link_to "Add Food", new_food_path(current_user) %>
-</div>
-<% end %>
-<% @foods.each_with_index do |food, index| %>
-  <p><%= food.name %></p>
-  <p>$<%= food.price %></p>
-  <p><%= food.measurement_unit %></p>
-  <% if can? :destroy, food %>
-    <%= button_to 'Delete', destroy_food_path(food), method: :delete, data: { confirm: 'Are you sure?' } %>
+<section class="main-wrapper">
+  <h2 class="main-heading">Food List Page</h2>
+  <% if current_user == @user %>
+    <%= link_to "Add Food", new_food_path(current_user), class:'btn' %>
   <% end %>
-<% end %>
+
+  <table class="food-table">
+    <thead>
+      <tr>
+        <th colspan="2">Food</th>
+        <th>Measurement Unit</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each_with_index do |food, index| %>
+        <tr>
+        <td colspan="2"><%= food.name %></td>
+        <td>$<%= food.price %></td>
+        <td><%= food.measurement_unit %></td>
+        <td>
+          <% if can? :destroy, food %>
+            <%= button_to 'Delete', destroy_food_path(food), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %>
+          <% end %>
+        </td>
+        </tr>
+      <% end %>
+    <tbody>
+  </table>
+<section class="main-wrapper">
