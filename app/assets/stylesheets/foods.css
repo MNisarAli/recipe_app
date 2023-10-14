@@ -1,7 +1,7 @@
 .food-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 .food-table th {
