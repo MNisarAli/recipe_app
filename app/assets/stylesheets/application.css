@@ -75,7 +75,8 @@ main {
 .confirmation_form,
 .post_form,
 .comment_form,
-.add_new_form {
+.add_new_form,
+.add_new_ingredient {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,7 +87,8 @@ main {
 .login_form,
 .password_form,
 .confirmation_form,
-.add_new_form {
+.add_new_form,
+.add_new_ingredient {
   max-width: 25rem;
 }
 
