@@ -1,0 +1,16 @@
+.recipe-list-container {
+  display: flex;
+  align-items: center;
+  flex-flow: wrap;
+  margin-bottom: 2rem;
+  padding: 1rem 2.5rem;
+  border: 1px solid #ccc;
+  background-color: #ffe4c4;
+  border-radius: 10px;
+  gap: 8rem;
+}
+
+.recipe-list-container:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
