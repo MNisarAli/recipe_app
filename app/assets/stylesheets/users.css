@@ -1,0 +1,43 @@
+body {
+  position: relative;
+  background-image: url('food.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(251 211 143 / 40%);
+}
+
+.user-info {
+  display: flex;
+  justify-content: end;
+}
+
+.logged-user {
+  width: fit-content;
+}
+
+.logged-user:first-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.welcome h1,
+.welcome h3 {
+  text-align: center;
+  color: #ed0000;;
+}
+
+.welcome h1 {
+  font-size: 4em;
+}
+
+.welcome h3 {
+  font-size: 2.5em;
+}

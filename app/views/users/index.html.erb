@@ -1,7 +1,12 @@
-<%#= button_to 'Log out', destroy_user_session_path, method: :delete, class: "logout" #%>
-<p>Logged in with <%= current_user.name %></p>
-<h1>Welcome to our Recipe App!</h1>
+<div class="user-info">
+  <section class="logged-user">
+    <p>User</p>
+    <p>Name: <%= current_user.name %></p>
+    <p>Email: <%= current_user.email %></p>
+  </section>
+</div>
 
-<%#= link_to "Recipe List", recipes_path %>
-
-<%#= link_to "Food List", foods_path %>
+<section class="welcome">
+  <h1>We become what we consume!</h1>
+  <h3>Explore our recipes 🍽</h3>
+</section>
