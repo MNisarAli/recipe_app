@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Food List Page', type: :feature do
   before do
     @user = User.create(name: 'Test User', email: 'test@gmail.com', password: 'password', confirmed_at: Time.now)
-    
+
     visit new_user_session_path
 
     fill_in 'Email', with: @user.email

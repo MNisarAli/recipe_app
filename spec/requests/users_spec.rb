@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   before do
-    @user1 =  User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
+    @user1 = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
     get users_path
   end
 
