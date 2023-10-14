@@ -1,20 +1,21 @@
-<section>
-  <h1 class='heading'>Shopping list</h1>
-  <article>
+<section class="main-wrapper">
+  <h1 class='main-heading'>Shopping list</h1>
+
+  <section class="amount-value">
       <h4>Amount of food items to buy: <span><%= @recipe_foods.length %></span> </h4>
       <h4>Total value of food needed: <span>$<%= @total_price %> </span></h4>
-  </article>
+  </section>
 
-  <article class="">
+  <section>
     <% if @recipe_foods.length.zero? %>
-      <h3 class="">
+      <h3>
         You have everything needed to make that recipe!
       </h3>
     <% else %>
-      <table class="">
-        <thead class="">
+      <table class="food-table shopping-table">
+        <thead>
           <tr>
-            <th>Food</th>
+            <th colspan="2">Food</th>
             <th>Quantity</th>
             <th>Total Price</th>
           </tr>
@@ -22,7 +23,7 @@
         <tbody>
           <% @recipe_foods.each do |food, recipe_foods| %>
             <tr>
-              <td><%= food %></td>
+              <td colspan="2"><%= food %></td>
               <td>
                 <% total_quantity = recipe_foods.map(&:quantity).sum %>
                 <%= total_quantity %>
