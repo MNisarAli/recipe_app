@@ -1,17 +1,22 @@
 <section class="main-wrapper">
-  <h2 class="main-heading">Recipe List Page</h2>
-  <%= link_to 'New Recipe', new_recipe_path, class:'btn' %>
+  <h1 class="main-heading">Recipes</h1>
+  <%= link_to 'New Recipe', new_recipe_path, class:'btn new-recipe-btn' %>
+
+  <% if @recipes.empty? %>
+    <h4 class="alert">No recipes added yet.</h4>
+  <% end %>
 
   <ul class="recipe-list">
     <% @recipes.each_with_index do |recipe, index| %>
-      <li class="recipe-list-container">
-        <div>
-          <p><%= link_to recipe.name, recipe_path(recipe) %></p>
-          <% if can? :destroy, recipe %>
-            <%= button_to 'Delete Recipe', destroy_recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn' %>
-          <% end %>
+      <li class="recipe-container">
+        <div class="recipe-heading">
+          <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+          <h4><%= truncate(recipe.description, length: 100) %></h4>
         </div>
-        <p><%= recipe.description %></p>
+
+        <% if can? :destroy, recipe %>
+          <%= button_to 'Delete Recipe', destroy_recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn' %>
+        <% end %>
       </li>
     <% end %>
   </ul>

@@ -1,6 +1,9 @@
 <section class="main-wrapper recipe-details">
-  <h2 class="main-heading">Recipe Details Page</h2>
-  <%= link_to 'Back to Recipes', recipes_path, class: 'btn' %>
+  <% if !current_user.nil? && current_user.id == @recipe.user_id %>
+    <%= link_to 'Back to Recipes', recipes_path, class: 'btn' %>
+  <% else %>
+    <%= link_to 'Back to Public Recipes', public_recipes_path, class: 'btn' %>
+  <% end %>
 
   <article class="heading_section">
     <h2 class="recipe_heading"><%=@recipe.name %></h2>
@@ -12,7 +15,7 @@
           <%= form_for @recipe do |f| %>
             <%= f.check_box :public, id: "visibility-toggle", class: "visibility_toggle_input" %>
             <%= f.label :public, class: "visibility_toggle_lable", for: "visibility-toggle" %>
-            <%= f.submit "Update Visibility", class: "btn update-visibility-btn" %>
+            <%= f.submit "Update Visibility", class: "btn" %>
           <%end%>
         <% end %>
       </div>
@@ -31,7 +34,9 @@
 
   <hr>
 
-  <div class="recipe-food-table">
+  <% if @recipe.recipe_foods.empty? %>
+    <h4 class="alert">No ingredients added yet</h4>
+  <% else %>
     <table class="food-table">
       <thead>
         <tr>
@@ -45,17 +50,18 @@
         <% @recipe.recipe_foods.each do |recipe_food| %>
           <tr>
             <td colspan="2"> <%= recipe_food.food.name %></td>
-            <td> <%= recipe_food.quantity %></td>
+            <td> <%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
             <td> $ <%= recipe_food.food.price.to_i * recipe_food.quantity %></td>
             <% if !current_user.nil? && current_user.id == @recipe.user_id %>
               <td>
-                <%#= link_to "Modify", "", class:'btn' #%>
-                <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food.id), method: :delete, class:'btn' %>
+                <%= button_to "Remove", recipe_recipe_food_path(@recipe, recipe_food.id), method: :delete, class:'btn delete-btn' %>
               </td>
+            <% else %>
+              <td></td>
             <% end %>
           </tr>
         <% end %>
       </tbody>
     </table>
-  </div>
+  <% end %>
 </section>
